@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:untitled/login_page.dart';
 import 'package:untitled/third_page.dart';
 import 'package:untitled/viewmodel/user_view_model.dart';
 
@@ -68,7 +69,7 @@ class _SecondPageState extends State<SecondPage> {
   void _logout(BuildContext context) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('isLoggedIn');
-    Navigator.pushReplacementNamed(context, '/');
+    Navigator.pushReplacement(context, MaterialPageRoute(builder:  (context) => LoginPage(),),);
   }
 
   @override
